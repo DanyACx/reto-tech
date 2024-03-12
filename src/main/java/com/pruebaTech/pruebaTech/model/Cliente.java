@@ -1,6 +1,7 @@
 package com.pruebaTech.pruebaTech.model;
 
-import java.sql.Date;
+import java.io.Serializable;
+import java.time.LocalDate;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -15,7 +16,7 @@ import lombok.Setter;
 @Getter
 @Entity
 @Table(name = "clientes", schema = "dev_job")
-public class Cliente {
+public class Cliente implements Serializable{
 
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,7 +33,7 @@ public class Cliente {
 	private Integer edad;
 	
 	@Column(name = "fecha_nacimiento")
-	private Date fechaNacimiento;
+	private LocalDate fechaNacimiento;
 	
 	
 }

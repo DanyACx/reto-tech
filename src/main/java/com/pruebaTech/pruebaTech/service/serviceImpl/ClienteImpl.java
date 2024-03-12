@@ -1,5 +1,6 @@
 package com.pruebaTech.pruebaTech.service.serviceImpl;
 
+import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -23,7 +24,7 @@ public class ClienteImpl implements ICliente{
 	
 	@Transactional(readOnly = true) // solo para consulta
 	public List<Cliente> listarClientes(){
-		
+		System.out.println("Fecha actual: " + LocalDate.now());
 		return (List<Cliente>) clienteDao.findAll();
 	}
 	
